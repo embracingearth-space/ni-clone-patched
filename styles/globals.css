@@ -1,0 +1,81 @@
+/* Reset and full-screen layout foundation */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Then your overrides after */
+html, body, #__next {
+    background: transparent !important;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.notion {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.notion-frame {
+    max-width: 100% !important;
+    margin: 0 auto;
+}
+
+
+.notion, .notion-page, .notion-frame, .notion-viewport {
+    background-color: transparent !important;
+}
+
+html,
+body,
+#__next {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: transparent !important;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Universal box model */
+* {
+    box-sizing: border-box;
+}
+
+/* Notion block overrides to remove white backgrounds */
+.notion,
+.notion-page,
+.notion-frame,
+.notion-viewport,
+.notion-root {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Redundant targeted overrides (ensure specificity for Notion plugins or SSR hydration) */
+.notion-page {
+    background-color: transparent !important;
+}
+.notion {
+    background-color: transparent !important;
+    color: white !important;
+}
+.notion-frame {
+    background: transparent !important;
+}
+
+.fixed-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -10;
+    pointer-events: none;
+}
