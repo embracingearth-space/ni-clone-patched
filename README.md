@@ -1,3 +1,61 @@
+
+
+
+
+✅ App Summary: Notion Overlay AI Workspace
+This project is a custom Notion viewer and AI-powered overlay interface, deployed as a web app that:
+
+Loads and renders public Notion pages in your own branded environment
+
+Uses a YouTube video background to turn the app into a visually immersive “watch + read” experience
+
+Offers AI-powered summarization and future plans for waveform + voice interaction
+
+Dynamically supports page navigation, breadcrumb hierarchy, and Notion-style linking
+
+⚙️ Features
+
+Feature	Description
+Public Notion Page Renderer	Uses react-notion-x to fetch and render Notion pages by URL
+Custom Layout	Overlays Notion on top of a fullscreen YouTube video
+Dynamic Routing	Supports clean URLs like /watch-it-1d7e0f65f3...
+Breadcrumbs	Shows Notion-style hierarchy (Parent / Page)
+AI Summarization	Uses OpenAI API to summarize page content
+Stage 2 Ready	Designed to add waveform overlays, audio analysis, voice agents
+
+
+🧱 Tech Stack
+
+Layer	Tech
+Frontend	React + Next.js 15
+UI Components	TailwindCSS
+Notion Rendering	react-notion-x
+Video Background	YouTube iframe (via YouTubeBackground.tsx with IFrame API)
+AI Integration	OpenAI (GPT-4) via API
+API Routes	Next.js /api/page using notion-client
+Deployment Ready	Dockerized with CI/CD automation
+Routing	Dynamic [id].tsx route with custom slug/ID handling
+
+🐳 DevOps / Deployment
+
+System	Setup
+Docker	Dockerfile and docker-compose.yml wrap the whole app
+CI/CD	GitHub Actions workflow pushes code to server and redeploys
+Hosting	Built for cPanel with SSH access, or deployable on Render, Railway, or VPS
+Persistence	Static YouTube player mounts outside React to avoid reloads
+
+✅ Next Capabilities You Can Add
+
+Feature	Stack
+Voice input	Whisper / Web Speech API
+Voice output	ElevenLabs / Google TTS
+Visual analysis	GPT-4 Vision or CLIP
+Memory/context	Pinecone / Weaviate / ChromaDB
+Task agents	LangChain / CrewAI / AutoGen
+Offline support	Bun + Ollama + Whisper locally
+
+
+
 # Notion AI Clone
 
 A modern web application that combines Notion's page rendering capabilities with AI-powered features. This project is built using Next.js, React, and integrates with OpenAI's GPT-3.5 for AI summarization.
