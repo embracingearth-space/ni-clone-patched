@@ -6,7 +6,7 @@ A modern web application that combines Notion's page rendering capabilities with
 
 - 📝 Notion page rendering with full support for Notion's rich content
 - 🤖 AI-powered page summarization using OpenAI's GPT-3.5
-- 🎥 Beautiful YouTube background video integration
+- 🎥 Configurable YouTube background video (currently set to a specific video)
 - 🌙 Dark mode support
 - 📱 Responsive design
 - 🔄 Real-time AI processing
@@ -39,6 +39,7 @@ Create a `.env.local` file in the root directory with the following variables:
 ```env
 OPENAI_API_KEY=your_openai_api_key
 NOTION_API_KEY=your_notion_api_key
+YOUTUBE_BACKGROUND_ID=your_youtube_video_id  # Optional: Change the background video
 ```
 
 ## Installation
@@ -69,6 +70,7 @@ yarn dev
 
 ```
 ├── components/         # React components
+│   └── YouTubeBackground.tsx  # YouTube background component
 ├── pages/             # Next.js pages and API routes
 │   ├── api/          # API endpoints
 │   └── index.tsx     # Main page
@@ -82,6 +84,17 @@ yarn dev
 - `/api/ai` - Handles AI summarization requests
 - `/api/notion-page` - Fetches Notion page content
 - `/api/page` - General page data endpoint
+
+## Customizing the YouTube Background
+
+The project currently uses a hardcoded YouTube video as the background. To change it:
+
+1. Find your desired YouTube video ID (the part after `v=` in the URL)
+2. Add it to your `.env.local` file:
+   ```env
+   YOUTUBE_BACKGROUND_ID=your_video_id
+   ```
+3. Or modify the video ID directly in `pages/index.tsx`
 
 ## Docker Support
 
